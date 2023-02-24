@@ -1,6 +1,6 @@
 from typing import Optional, Dict, Tuple
 from enum import Enum
-from warchest import UnitCard
+from warchest.unit_cards import UnitCard
 
 
 class CellType(Enum):

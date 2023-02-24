@@ -1,10 +1,10 @@
-from warchest import UnitCard
+from warchest.unit_cards import UnitCard
 
 class Player:
 
     def __init__(self, name: str) -> None:
         self.name = name
-        self.unit_cards: list[UnitCard] = []
+        self.recruitment: list[UnitCard] = []
         self.bag: list[Coin] = []
         self.discard_stack: list[Coin] = []
         self.hand: list[Coin] = []
