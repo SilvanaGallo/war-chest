@@ -1,9 +1,9 @@
 from warchest.unit_cards import UnitCard
 
-class BattlefieldUnitCard(UnitCard):
+class RoyalUnitCard(UnitCard):
 
-    def __repr__(self) -> str:
-        raise NotImplementedError
+    def __init__(self) -> None:
+        self.total_units: int = 2
 
     def attack(self) -> None:
         raise NotImplementedError

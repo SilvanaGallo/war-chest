@@ -1,12 +1,12 @@
 from warchest.unit_cards import BattlefieldUnitCard
 
-class KnightUnitCard(BattlefieldUnitCard):
+class BerserkerUnitCard(BattlefieldUnitCard):
 
     def __init__(self) -> None:
-        self.total_units: int = 5
+        self.total_units: int = 4
 
     def __repr__(self) -> str:
-        return 'K'
+        return 'B'
 
     def attack(self) -> None:
         raise NotImplementedError

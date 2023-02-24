@@ -1,18 +1,15 @@
-from warchest.unit_cards import Battlefield
+from warchest.unit_cards import BattlefieldUnitCard
 
-class SwordsmanUnitCard(Battlefield):
+class SwordsmanUnitCard(BattlefieldUnitCard):
 
-    @abstractmethod
+    def __init__(self) -> None:
+        self.total_units: int = 4
+
     def __repr__(self) -> str:
-        raise NotImplementedError
+        return 'S'
 
-    def total_units(self) -> int:
-        return self.total_units
-
-    @abstractmethod
     def attack(self) -> None:
         raise NotImplementedError
 
-    @abstractmethod
     def attack(self) -> None:
         raise NotImplementedError

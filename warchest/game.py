@@ -2,14 +2,39 @@ import csv
 import random
 from datetime import datetime
 from warchest import Board, Player
+from warchest.unit_cards import *
 
 class WarChestGame:
     HAND_SIZE = 3
 
+    unit_class_names = {
+        0: ArcherUnitCard,
+        1: BerserkerUnitCard,
+        2: CavalryUnitCard,
+        3: CrossbowmanUnitCard,
+        4: KnightUnitCard,
+        5: LancerUnitCard,
+        6: MercenaryUnitCard,
+        7: SwordsmanUnitCard
+    }
+
+
     def setup_players(self) -> None:
-        self.players: list[Player] = [Player(name="Crow"), Player(name="Wolf")]
+        self.players: list[Player] = [Player(name="Crow", symbol='^'), Player(name="Wolf", symbol='v')]
         self.initiative_index: int = random.randint(0, len(self.players)-1)
         self.players[self.initiative_index].set_initiative()
+
+        # select random unit cards from random set
+        random_set = random.sample(range(8), 4)
+
+        # add cards to recruitment 
+        for i in range(8):
+            if i in random_set:
+                self.players[0].add_unit_card(self.unit_class_names[i]())
+            else:
+                self.players[1].add_unit_card(self.unit_class_names[i]())
+
+
         
         
     def play_game(self) -> Player:
