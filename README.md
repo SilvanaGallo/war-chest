@@ -11,4 +11,8 @@ In order to model this game we need to consider different components:
 - Initiative: One player starts with this token, but it could be claimed by the other player during a "get initiative" action.
 
 
-In my application model I have included a class to represent the board
+In my application model I have included a class to represent the board. It has a n size and a content that is a dictionay with a tuple key and a Unit (see hierarchy below) value. It seems better than a matrix implementation for me in order to simplify the access to different elements. If a cell is controlled, it has a ControlledMarker token in its content.
+
+
+I have added a hierarchy in order to manage the unit types and movements. I create a Unit abstract class that represents the general methods and attributes and concrete classes for each type of unit with their specific behavior.
+
