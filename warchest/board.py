@@ -1,6 +1,6 @@
 from typing import Optional, Dict, Tuple
 from enum import Enum
-from warchest.models import Unit
+from warchest import UnitCard
 
 
 class CellType(Enum):
@@ -26,7 +26,7 @@ class Board:
     def __init__(self, size: int = 9, starting_zones_per_player: int = 2)-> None:
         self.n: int = size
         self.start_zones_per_player: int = starting_zones_per_player
-        self.content: Dict[Tuple[str, int], Optional[Unit]] = {}
+        self.content: Dict[Tuple[str, int], Optional[UnitCard]] = {}
         self.layout: Dict[Tuple[str, int], Optional[CellType]] = {}
        
     def _layout_from_file(self) -> None:

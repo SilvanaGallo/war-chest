@@ -1,5 +1,5 @@
 import unittest
-from warchest.models.board import Board, CellType
+from warchest import Board, CellType
 
 class TestBoard(unittest.TestCase):
 

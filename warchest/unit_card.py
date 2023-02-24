@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-class Unit(ABC):
+class UnitCard(ABC):
 
     @abstractmethod
     def __repr__(self) -> str:
