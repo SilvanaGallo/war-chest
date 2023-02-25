@@ -1,4 +1,3 @@
-
 class Coin:
 
     def __init__(self, unit_card) -> None:

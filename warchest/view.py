@@ -19,7 +19,10 @@ class GameTerminalView:
         if play.lower() == 'y':
             return True
         else:
-            print("Incorrect option. Bye.")
+            if play.lower() == 'n':
+                print("Ok, maybe next time. Bye.")
+            else:
+                print("Incorrect option. Bye.")
             return False    
 
     @classmethod
