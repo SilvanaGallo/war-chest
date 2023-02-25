@@ -1,15 +1,5 @@
-from warchest import WarChestGame, Player
-from warchest.unit_cards import ArcherUnitCard
+from warchest import WarChestGame, GameTerminalView
 
-def start_game(game: WarChestGame) -> Player:
-    play = input("Start game? (y/n): ")
-
-    if play.lower() == 'y':
-        winner: Player = game.start_game()
-        return  winner
-    else:
-        print("Incorrect option. Bye.")
-        return None
 
 if __name__ == "__main__":
     # create the game
@@ -18,10 +8,12 @@ if __name__ == "__main__":
     # show statistics
     game.show_statistics()
 
+    winner: str = None
     # start game and return the winner
-    winner: Player = start_game(game)
-
+    if GameTerminalView.start_game():
+        winner = game.start_game()
+        
     # store winner
     if winner:
-        game.store_winner(winner.name)
+        game.store_winner(winner)
 

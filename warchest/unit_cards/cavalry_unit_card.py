@@ -4,6 +4,7 @@ class CavalryUnitCard(BattlefieldUnitCard):
 
     def __init__(self) -> None:
         self.total_units: int = 4
+        self.name: str = 'Cavalry'
 
     def __repr__(self) -> str:
        return 'C'

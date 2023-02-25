@@ -1,4 +1,6 @@
+from typing import Optional
 from warchest.unit_cards import UnitCard
+from warchest.pieces import Coin
 
 class BattlefieldUnitCard(UnitCard):
 
@@ -8,5 +10,3 @@ class BattlefieldUnitCard(UnitCard):
     def attack(self) -> None:
         raise NotImplementedError
 
-    def attack(self) -> None:
-        raise NotImplementedError

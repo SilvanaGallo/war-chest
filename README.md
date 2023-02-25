@@ -16,3 +16,19 @@ In my application model I have included a class to represent the board. It has a
 
 I have added a hierarchy in order to manage the unit types and movements. I create a Unit abstract class that represents the general methods and attributes and concrete classes for each type of unit with their specific behavior.
 
+----------------------------------------------
+Reestructure the code in order to add configuration classes and factories that simplifie the tasks
+
+========================================================================================================
+
+# Actions
+
+Initiative and forfeit
+---------------------------
+Initiative action is managed by the game logic (WarChestGame class) and Player class. WarChestGame class manages a index in order to know at anytime wich player needs to set their initiative, Player class has a boolean attribute to know if the player has or hasn't the initiative.
+
+Initiative and Forfeit actions imply a coin discard process, without distinguishing its unit.
+
+
+Recruit process
+---------------------------

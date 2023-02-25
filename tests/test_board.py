@@ -1,5 +1,6 @@
 import unittest
 from warchest import Board, CellType
+from warchest.pieces import ControlMarker
 
 class TestBoard(unittest.TestCase):
 

@@ -1,6 +1,6 @@
 from typing import Optional, Dict, Tuple
 from enum import Enum
-from warchest import Coin
+from warchest.pieces import ControlMarker, Coin
 
 
 class CellType(Enum):
@@ -32,7 +32,7 @@ class Board:
     def _layout_from_file(self) -> None:
         # in future versions the filepath could be a input of the main program
         
-        with open(f'./layout{self.n}.txt', 'r') as input_file:
+        with open(f'./files/layout{self.n}.txt', 'r') as input_file:
             i: int = 0
             for line in input_file: #read line by line
                 elements = line.split() #trim \n and separate elements
@@ -60,21 +60,20 @@ class Board:
     def _string_column(self, index: int) -> chr:
         return chr(ord('a') + index)
 
-    def print(self) -> None:
-        # print header
+    def __repr__(self) -> str:
+        # header
         header: str = ' '
         divisor: str = ' '
         for i in range(self.n):
             header += '  ' + self._string_column(i)
             divisor += '---'
-        print(header)
-        print(divisor)
-
-        # print content
+        
+        # content
+        content: str = ''
         for row in range(self.n):
             output: str = f'{row}|'
             for col in range(self.n):
                 key_obj: tuple = (self._string_column(row), col)
-                output += ' ' + (self.content[key_obj] if key_obj in self.content else '. ')
-            print(output)
-
+                output += ' ' + (str(self.content[key_obj]) if key_obj in self.content else '. ')
+            content += output + '\n'
+        return '\n' + header + '\n' + divisor + '\n' + content + '\n'
