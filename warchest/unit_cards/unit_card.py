@@ -21,3 +21,7 @@ class UnitCard(ABC):
             return Coin(unit_card=self)
         else:
             return None
+            
+    @abstractmethod 
+    def recruit_action(self) -> str:
+        raise NotImplementedError

@@ -1,7 +1,4 @@
-
-
 class ControlMarker:
-
     def __init__(self, owner_name: str) -> None:
         self.owner_name: str = owner_name
 
