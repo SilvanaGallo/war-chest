@@ -12,5 +12,5 @@ class Coin:
     def get_unit_type(self) -> str:
         return self.unit_card.name
 
-    def __repr__(self) -> str:
+    def __str__(self) -> str:
         return f"{self.unit_card}{self.owner_symbol}"

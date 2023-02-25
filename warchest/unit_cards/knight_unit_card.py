@@ -12,11 +12,11 @@ class KnightUnitCard(BattlefieldUnitCard):
         self.total_units: int = 5
         self.name: str = "Knight"
 
-    def __repr__(self) -> str:
+    def __str__(self) -> str:
         return "K"
 
-    def attack(self) -> None:
+    def move_action(self) -> None:
         raise NotImplementedError
 
-    def attack(self) -> None:
+    def attack_action(self) -> None:
         raise NotImplementedError

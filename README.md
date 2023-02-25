@@ -48,3 +48,5 @@ I started doing TDD for the board but it took me a lot of time, so I stopped in 
 
 I had problems with Circular dependencies between classes and several focus changes because of that.
 I tried to apply dependency injection in some cases to minimize the shared data, but I feel that the code becomes harder to read and maintain.
+
+

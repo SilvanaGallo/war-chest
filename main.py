@@ -12,8 +12,7 @@ if __name__ == "__main__":
     # start game and return the winner
     if GameTerminalView.start_game():
         winner = game.start_game()
-        
+
     # store winner
     if winner:
         game.store_winner(winner)
-

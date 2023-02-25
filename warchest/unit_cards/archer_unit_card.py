@@ -11,7 +11,7 @@ class ArcherUnitCard(BattlefieldUnitCard):
         self.total_units: int = 4
         self.name: str = "Archer"
 
-    def __repr__(self) -> str:
+    def __str__(self) -> str:
         return "A"
 
     def move_action(self) -> None:

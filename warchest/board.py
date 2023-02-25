@@ -93,7 +93,7 @@ class Board:
     def _string_column(self, index: int) -> chr:
         return chr(ord("a") + index)
 
-    def __repr__(self) -> str:
+    def __str__(self) -> str:
         # header
         header: str = " "
         divisor: str = " "

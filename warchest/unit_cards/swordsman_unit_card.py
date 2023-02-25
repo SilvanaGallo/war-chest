@@ -12,7 +12,7 @@ class SwordsmanUnitCard(BattlefieldUnitCard):
         self.total_units: int = 4
         self.name: str = "Swordsman"
 
-    def __repr__(self) -> str:
+    def __str__(self) -> str:
         return "S"
 
     def move_action(self) -> None:

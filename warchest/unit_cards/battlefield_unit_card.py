@@ -1,10 +1,16 @@
+from abc import abstractmethod
 from warchest.unit_cards import UnitCard
 
 
 class BattlefieldUnitCard(UnitCard):
-    def __repr__(self) -> str:
+    def __str__(self) -> str:
         raise NotImplementedError
 
+    @abstractmethod
+    def move_action(self) -> None:
+        raise NotImplementedError
+
+    @abstractmethod
     def attack_action(self) -> None:
         raise NotImplementedError
 
@@ -13,3 +19,6 @@ class BattlefieldUnitCard(UnitCard):
 
     def place_action(self) -> str:
         raise "place"
+
+    def control_action(self) -> str:
+        raise "control"

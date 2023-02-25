@@ -95,7 +95,7 @@ class Player:
             discard_str += f"{e.unit_card.name}, "
         return discard_str + "\n"
 
-    def __repr__(self) -> str:
+    def __str__(self) -> str:
         output: str = f"========= {self.name} ({self.symbol}) ========= \n"
 
         return (
