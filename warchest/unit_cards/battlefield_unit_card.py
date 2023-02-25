@@ -1,6 +1,4 @@
-from typing import Optional
 from warchest.unit_cards import UnitCard
-from warchest.pieces import Coin
 
 
 class BattlefieldUnitCard(UnitCard):
@@ -11,7 +9,7 @@ class BattlefieldUnitCard(UnitCard):
         raise NotImplementedError
 
     def recruit_action(self) -> str:
-        return f"recruit_battlefield"
-    
+        return "recruit_battlefield"
+
     def place_action(self) -> str:
-        raise 'place'
+        raise "place"

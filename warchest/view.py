@@ -43,7 +43,7 @@ class GameTerminalView:
     def select_position(cls, message: str, board) -> tuple[str, int]:
         while True:
             coords = input(message + ": ")
-            y, x = coords.split(",")
+            x, y = coords.split(",")
 
             if x.isalpha() and (y.isdigit() and int(y) >= 0 and int(y) < board.n):
                 return (x, int(y))

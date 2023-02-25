@@ -6,19 +6,21 @@ In order to model this game we need to consider different components:
 
 - Players: There are 2 players (wolf and crow) that have 4 random unit types of the 8 possible. Each player has a bag of coins with a royalty unit, and 2 unit coins of each random selected units. Then, each player has C (4 or 6) control markers that have to been placed in neutral or starting zones in order to win the game. Another containers that are used by players are recruitment section (that contains the remaining unit coins), discard stack (that contains the used coins), and the hand (that is composed by 3 unit coins extracted from the bag in each play turn).
 
-- Units: They are materialized by coins. Each coin belongs to a unit role and has a different behavior through actions and its strategy.
+- Units: They are materialized by coins. Each coin belongs to a unit role that has a different behavior through actions and its strategy.
 
 - Initiative: One player starts with this token, but it could be claimed by the other player during a "get initiative" action.
 
-In my application model I have included a class to represent the board. It has a n size and a content that is a dictionay with a tuple key and a Unit (see hierarchy below) value. It seems better than a matrix implementation for me in order to simplify the access to different elements. If a cell is controlled, it has a ControlledMarker token in its content.
+In my application model I have included a class to represent the board. It has a n size and a content that is a dictionay with a tuple key and a Unit (see hierarchy below) value. It seems better than a matrix implementation for me in order to simplify the access to different elements. If a cell is controlled, it has a ControlMarker token in its content.
 
-I have added a hierarchy in order to manage the unit types and movements. I create a Unit abstract class that represents the general methods and attributes and concrete classes for each type of unit with their specific behavior.
+I have added a hierarchy in order to manage the unit types and movements. I create a Unit abstract class that represents the general methods and attributes and concrete classes for each type of unit with their specific behavior. I added a BattlefieldUnitCard class that represents units that ara placed on the board.
 
 ## Pending
 
+Some actions
 Reestructure the code in order to add configuration classes and factories that simplifie the tasks
 Maybe Units could be singletons in order to simplify
 Verify if Royal is better implemented by wrapper functions
+Verify that the ControlMarker could be a decorator of a cell
 
 ========================================================================================================
 
@@ -33,3 +35,16 @@ Initiative and Forfeit actions imply a coin discard process, without distinguish
 ## Recruit process
 
 I have implemented a dinamic function caller in order to select between methods when we encounter a royal or battlefield unit.
+
+## Placement
+
+I have implemented a general placement action, but it does not chek Royal unit selection
+
+========================================================================================================
+
+# Problems
+
+I started doing TDD for the board but it took me a lot of time, so I stopped in this class (some test were erased).
+
+I had problems with Circular dependencies between classes and several focus changes because of that.
+I tried to apply dependency injection in some cases to minimize the shared data, but I feel that the code becomes harder to read and maintain.

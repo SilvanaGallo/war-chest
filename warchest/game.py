@@ -2,7 +2,6 @@ import csv
 import random
 from datetime import datetime
 from warchest import Board, Player, GameTerminalView
-from warchest.unit_cards import *
 from warchest.config import Config
 from warchest.pieces import Coin
 
@@ -135,28 +134,26 @@ class WarChestGame:
                     action: str = GameTerminalView.select_action()
                     self.execute_action(action)
                     # show player info
-                    GameTerminalView.show(self.current_player)
+                    # GameTerminalView.show(self.current_player)
 
                 index = (index + 1) % len(self.players)
                 i += 1
                 # Check game ending
                 winner = self.current_player.is_winner()
-                # show player info
-                GameTerminalView.show(self.board)
-
         return winner
 
     def show_statistics(self) -> None:
-        with open("./files/statistics.txt", "r") as input_file:
+        with open("./files/statistics.csv", "r") as input_file:
             reader = csv.reader(input_file)
             header_row = next(reader)
             print(f"\t{header_row[0]}\t{header_row[1]}\t{header_row[2]}")
             for line in reader:  # read line by line
                 print(f"\t{line[0]}\t{line[1]}\t\t{line[2]}")
+            print("\n")
 
     def store_winner(self, winner: str) -> None:
         # it appends a new winner
         # in future versions, check if the player is in previous data to sum games won
-        with open("./files/statistics.txt", "w") as output_file:
+        with open("./files/statistics.csv", "w") as output_file:
             csv_writer = csv.writer(output_file)
             csv_writer.writerow([winner.name, 1, datetime.now()])
