@@ -14,6 +14,9 @@ In my application model I have included a class to represent the board. It has a
 
 I have added a hierarchy in order to manage the unit types and movements. I create a Unit abstract class that represents the general methods and attributes and concrete classes for each type of unit with their specific behavior. I added a BattlefieldUnitCard class that represents units that ara placed on the board.
 
+<img src="class_model.png" align="center" />
+
+
 ## Pending
 
 Some actions
