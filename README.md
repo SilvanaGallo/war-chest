@@ -19,11 +19,16 @@ I have added a hierarchy in order to manage the unit types and movements. I crea
 
 ## Pending
 
-Some actions
-Reestructure the code in order to add configuration classes and factories that simplifie the tasks
-Maybe Units could be singletons in order to simplify
-Verify if Royal is better implemented by wrapper functions
-Verify that the ControlMarker could be a decorator of a cell
+Some actions.
+
+Reestructure the code in order to add configuration classes and factories that simplifie the tasks.
+
+Maybe Units could be singletons in order to simplify.
+
+Verify if Royal is better implemented by wrapper functions.
+
+Verify that the ControlMarker could be a decorator of a cell.
+
 
 ========================================================================================================
 
