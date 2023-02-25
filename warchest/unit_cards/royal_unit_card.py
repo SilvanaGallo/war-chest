@@ -20,9 +20,6 @@ class RoyalUnitCard(UnitCard):
         self.total_units: int = 1
         self.name: str = "Royal"
 
-    def get_initiative(self):
-        None
-
     def recruit_unit(self) -> Optional[Coin]:
         if self.total_units > 0:
             self.total_units -= 1

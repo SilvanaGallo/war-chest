@@ -9,7 +9,7 @@ from warchest.pieces import Coin
 class WarChestGame:
     def start_game(self) -> str:
         # create board and setup
-        self.board: Board = Board()
+        initiboard: Board = Board()
         self.board.setup()
 
         # setup players
